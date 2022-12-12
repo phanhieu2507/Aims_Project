@@ -1,47 +1,31 @@
 package hust.soict.dsai.aims.store;
 
-import hust.soict.dsai.aims.disc.DigitalVideoDisc;
+import hust.soict.dsai.aims.media.DigitalVideoDisc;
+import hust.soict.dsai.aims.media.Media;
+
+import java.util.ArrayList;
 
 public class Store {
     public static final int MAX_NUMBER_DVD = 100;
-    private DigitalVideoDisc itemsInStore[] = new DigitalVideoDisc[MAX_NUMBER_DVD];
-    private int qtyOrdered = 0;
+    private ArrayList<Media> itemsInStore = new ArrayList<Media>(MAX_NUMBER_DVD);
 
-    public void addDVD(DigitalVideoDisc disc) {
-        if (this.qtyOrdered < MAX_NUMBER_DVD) {
-            this.itemsInStore[this.qtyOrdered] = disc;
-            this.qtyOrdered += 1;
-            System.out.println("Successfully added!");
-        }else {
-            System.out.println("Full of Discs !");
+    public void addMedia(Media media) {
+        if (itemsInStore.size() == MAX_NUMBER_DVD) {
+            System.out.println("Store is full");
+            return;
         }
+        itemsInStore.add(media);
     }
-    public void removeDVD(DigitalVideoDisc disc) {
-        boolean found = false;
-        for(int i = 0; i<qtyOrdered; i++){
-            if(itemsInStore[i]==disc){
-                if (i == qtyOrdered-1){
-                    itemsInStore[i] = null;
-                    qtyOrdered--;
-                    found = true;
-                } else {
-                    for (int j = i; j<qtyOrdered-1; j++){
-                        itemsInStore[j]=itemsInStore[j+1];
-                    }
-                    qtyOrdered--;
-                    found = true;
-                }
-                System.out.println("Disc removed");
-                break;
-            }
-        }
-        if (found == false){
-            System.out.println("Disc not found");
+    public void removeMedia(Media media) {
+        if (itemsInStore.remove(media)) {
+            System.out.println("Removed");
+        } else {
+            System.out.println("Not found");
         }
     }
     public void print(){
-        for (int i=0;i<this.qtyOrdered;i++) {
-            System.out.println(this.itemsInStore[i].toString());
+        for (int i=0;i<this.itemsInStore.size();i++) {
+            System.out.println(this.itemsInStore.get(i).toString());
         }
     }
 
