@@ -17,7 +17,7 @@ public class MediaTest {
         Track track = new Track("The Lion King 3", 12);
         ArrayList<Track> tracks = new ArrayList<>();
         tracks.add(track);
-        DigitalVideoDisc dvd = new DigitalVideoDisc("The Lion King", "Animation", 20f, "simba", 2);
+        DigitalVideoDisc dvd = new DigitalVideoDisc("The Lion King", "Animation" , "simba",3, 20f);
         CompactDisc cd = new CompactDisc("King Man", "Action", 22f, "Jame", "Jame", 3);
         Book book = new Book("The Lion King", "Animation", 1.2f);
 

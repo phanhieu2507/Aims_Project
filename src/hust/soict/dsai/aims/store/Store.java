@@ -28,5 +28,8 @@ public class Store {
             System.out.println(this.itemsInStore.get(i).toString());
         }
     }
+    public ArrayList<Media> getItemsInStore() {
+        return itemsInStore;
+    }
 
 }

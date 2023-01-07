@@ -36,6 +36,20 @@ public abstract class Media {
         this.category = category;
         this.cost = cost;
     }
+    public Media(String title){
+        this.id = ++nbMedia ;
+        this.title = title;
+        this.category = "Unknown";
+        this.cost =0.0f;
+    }
+
+    public Media(String title, float cost){
+        this.id = ++nbMedia ;
+        this.title = title;
+        this.category = "Unknown";
+        this.cost = cost;
+    }
+
     public boolean equals(Object obj) {
         if (obj instanceof Media) {
             return this.getTitle().equals(((Media) obj).getTitle());

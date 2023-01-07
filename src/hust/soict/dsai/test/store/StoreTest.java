@@ -8,11 +8,11 @@ public class StoreTest {
         Store store = new Store();
 
         DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King",
-                "Animation", 19.95f, "Jame", 19);
+                "Animation", "Jame", 19, 19.95f);
         DigitalVideoDisc dvd2 = new DigitalVideoDisc("The Lion King",
-                "Animation", 19.95f, "Jame", 19);
+                "Animation", "Jame", 19, 19.95f);
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("The Lion King",
-                "Animation", 19.95f, "Jame", 19);
+                "Animation", "Jame", 19, 19.95f);
         store.addMedia(dvd1);
         store.addMedia(dvd2);
         store.addMedia(dvd3);

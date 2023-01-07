@@ -8,17 +8,17 @@ public class CartTest {
         Cart cart = new Cart();
 
         DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King",
-                "Animation", 19.95f, "Jame", 19);
+                "Animation", "Jame", 19, 19.95f);
         System.out.println(dvd1.getId());
         cart.addMedia(dvd1);
 
         DigitalVideoDisc dvd2 = new DigitalVideoDisc("The Lion King",
-                "Animation", 19.95f, "Jame", 19);
+                "Animation", "Jame", 19, 19.95f);
         System.out.println(dvd2.getId());
         cart.addMedia(dvd2);
 
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("The Lion King",
-                "Animation", 19.95f, "Jame", 19);
+                "Animation", "Jame", 19, 19.95f);
         System.out.println(dvd3.getId());
         cart.addMedia(dvd3);
 

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Book extends Media {
+    private static int QUANTITY = 0;
     private List<String> author = new ArrayList<String>();
     public List<String> getAuthor() {
         return author;
@@ -43,9 +44,32 @@ public class Book extends Media {
         }
     }
 
-    public Book(String title, String category, float cost) {
-        super(title,category,cost);
+    public Book(String title, float cost, String category, List<String> authors) {
+        super(title, category, cost);
+        Book.QUANTITY += 1;
+        this.id = Book.QUANTITY;
+        this.author = authors;
     }
+
+    public Book(String title, String category, float cost) {
+        super(title, category, cost);
+        Book.QUANTITY += 1;
+        this.id = (Book.QUANTITY);
+        List<String> authors = new ArrayList<String>();
+        authors.add("Unknown");
+        this.author = authors;
+    }
+
+    public Book(String title, float cost) {
+        super(title, cost);
+        Book.QUANTITY += 1;
+        this.id = (Book.QUANTITY);
+        List<String> authors = new ArrayList<String>();
+        authors.add("Unknown");
+        this.author = authors;
+    }
+
+
     public String toString() {
         return this.getId() + ".Book - " + this.getTitle() + " - " + this.getCategory() + ": " + this.getCost() + " $";
     }
